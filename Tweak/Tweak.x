@@ -174,6 +174,69 @@ NSString* languageCode = nil; // language code to detect device language
 
 }
 
+// German
+%new
+- (void)enEmojis {
+
+	conditions = [[PDDokdo sharedInstance] currentConditions];
+
+	// Sunny
+	if ([conditions containsString:@"Sonne"] || [conditions containsString:@"Sonne"]) {
+		if ([conditions isEqualToString:@"Sonnig"])
+			weatherString = @"☀️";
+		else if ([conditions isEqualToString:@"Meist sonnig"])
+			weatherString = @"🌤";
+		else
+			weatherString = @"☀️";
+		return;
+	}
+
+	// Clear
+	if ([conditions containsString:@"clear"] || [conditions containsString:@"Wolkenlos"]) {
+		if ([conditions isEqualToString:@"Wolkenlos"])
+			weatherString = @"☀";
+		else if ([conditions isEqualToString:@"Meist Wolkenlos"])
+			weatherString = @"🌤";
+		else
+			weatherString = @"☀️";
+		return;
+	}
+
+	// Cloudy
+	if ([conditions containsString:@"cloud"] || [conditions containsString:@"Wolke"]) {
+		if ([conditions isEqualToString:@"Bewölkt"])
+			weatherString = @"☁️";
+		else if ([conditions isEqualToString:@"Meist bewölkt"])
+			weatherString = @"🌥";
+		else if ([conditions isEqualToString:@"Teilweise bewölkt"])
+			weatherString = @"🌤";
+		else
+			weatherString = @"☁️";
+		return;
+	}
+
+	// Rain
+	if ([conditions containsString:@"Schauer"] || [conditions containsString:@"Donner"] || [conditions containsString:@"Regen"] || [conditions containsString:@"Donner"]) {
+		if ([conditions isEqualToString:@"Schauer"])
+			weatherString = @"🌧";
+		else if ([conditions isEqualToString:@"Gewitter"])
+			weatherString = @"⛈";
+		else if ([conditions containsString:@"Donner"])
+			weatherString = @"⛈";
+		else
+			weatherString = @"🌦";
+		return;
+	}
+
+	// Snow
+	if ([conditions containsString:@"Schnee"] || [conditions containsString:@"Schnee"]) {
+		weatherString = @"🌨";
+		return;
+	}
+
+}
+
+
 %end
 
 // Hide Breadcrumbs
