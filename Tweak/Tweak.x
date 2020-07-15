@@ -181,7 +181,7 @@ NSString* languageCode = nil; // language code to detect device language
 	conditions = [[PDDokdo sharedInstance] currentConditions];
 
 	// Sunny
-	if ([conditions containsString:@"Sonne"] || [conditions containsString:@"Sonne"]) {
+	if ([conditions containsString:@"sonne"] || [conditions containsString:@"Sonne"]) {
 		if ([conditions isEqualToString:@"Sonnig"])
 			weatherString = @"☀️";
 		else if ([conditions isEqualToString:@"Meist sonnig"])
@@ -192,7 +192,7 @@ NSString* languageCode = nil; // language code to detect device language
 	}
 
 	// Clear
-	if ([conditions containsString:@"clear"] || [conditions containsString:@"Wolkenlos"]) {
+	if ([conditions containsString:@"wolkenlos"] || [conditions containsString:@"Wolkenlos"]) {
 		if ([conditions isEqualToString:@"Wolkenlos"])
 			weatherString = @"☀";
 		else if ([conditions isEqualToString:@"Meist Wolkenlos"])
@@ -203,7 +203,7 @@ NSString* languageCode = nil; // language code to detect device language
 	}
 
 	// Cloudy
-	if ([conditions containsString:@"cloud"] || [conditions containsString:@"Wolke"]) {
+	if ([conditions containsString:@"wolke"] || [conditions containsString:@"Wolke"]) {
 		if ([conditions isEqualToString:@"Bewölkt"])
 			weatherString = @"☁️";
 		else if ([conditions isEqualToString:@"Meist bewölkt"])
